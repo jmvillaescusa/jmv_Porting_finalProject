@@ -12,11 +12,12 @@ public class StartScreen : MonoBehaviour
 
     private void Start()
     {
+        float screenWidth = Camera.main.orthographicSize * 2.0f * Screen.width / Screen.height;
         Debug.Log(width);
         Debug.Log(height);
         donkeyKong.transform.parent = title.transform;
 
-        title.transform.position = Camera.main.ScreenToViewportPoint(new Vector3(title.transform.position.x, title.transform.position.y + (height), title.transform.position.z));
-        donkeyKong.transform.position = Camera.main.ScreenToViewportPoint(new Vector3(width * -3f, height * -1f, title.transform.position.z - 1));
+        title.transform.position = Camera.main.ScreenToWorldPoint(new Vector3(width * 0.5f, height * 0.75f, 5));
+        title.transform.localScale = new Vector3(screenWidth / 0.5f, screenWidth / 0.5f, screenWidth / 0.5f);
     }
 }
