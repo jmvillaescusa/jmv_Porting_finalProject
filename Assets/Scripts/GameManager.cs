@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance = null;
     public ScreenManager screenManager;
+    public StartMenu startMenu;
     // public GameObject pauseMenu;
     // public GameObject gameUI;
     
@@ -20,6 +21,7 @@ public class GameManager : MonoBehaviour
         // donkeyKong = GameObject.Find("DonkeyKong")
         SetInstance();
         screenManager.SetInstance();
+        startMenu.SetInstance();
     }
 
     void SetInstance()
@@ -67,6 +69,9 @@ public class GameManager : MonoBehaviour
 
     public void Update()
     {
-        
+        if (screenManager.currentScreen == ScreenManager.Screens.PLAY)
+        {
+            Debug.Log("Test");
+        }
     }
 }

@@ -45,14 +45,5 @@ public class ScreenManager : MonoBehaviour
                 PlayScreen.SetActive(true);
                 break;
         }
-
-        if (Input.GetKeyDown(KeyCode.Return) && currentScreen == Screens.START)
-        {
-            currentScreen = Screens.PLAY;
-        }
-        else if (Input.GetKeyDown(KeyCode.Return) && currentScreen == Screens.PLAY)
-        {
-            currentScreen = Screens.START;
-        }
     }
 }
